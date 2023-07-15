@@ -7,21 +7,17 @@
 .add_todo__input{
     border-radius: 10px;
     padding: 5px 5px;
-    border: solid 4px #FE53BB;
+    border: solid 4px #4caf50;
     font-weight: bold;
 }
 .add_todo__button{
     border-radius: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
     border: none;
-    padding: 8px 15px;
-    /* border: double 4px transparent; */
-    border: solid 4px #FE53BB;
-    background: white;
-    font-size: medium;
-    font-weight: bold;
-}
-.add_todo__input:invalid{
-    color: red;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .add_todo__input:focus,
@@ -30,6 +26,5 @@
     border: 4px solid green;
 }
 .add_todo__button:hover{
-    cursor: pointer;
-    border: solid 4px #FE53BB;
+    background-color: #45a049;
 }

@@ -1,23 +1,26 @@
 import { useState, createContext, useContext } from "react";
 
+// creating context
 const AppContext = createContext(null);
 
+// providing context to app
 const AppContextProvider = ({ children }) => {
+  // app saved data or initialState of app
   const [appData, setAppData] = useState(
     JSON.parse(localStorage.getItem("AppData")) || {
+      // todo related data
       todo: {
         totalTodos: 0,
         completedTodos: 0,
-        pendingTodos: 0,
         todos: [],
       },
+      // shopping cart related data
       cart: {
         totalItems: 0,
         items: [],
       },
     }
   );
-  // console.log(appData);
   return (
     <AppContext.Provider value={{ appData, setAppData }}>
       {children}
@@ -25,6 +28,7 @@ const AppContextProvider = ({ children }) => {
   );
 };
 
+// just function of useContext
 const useAppContext = () => {
   return useContext(AppContext);
 };
