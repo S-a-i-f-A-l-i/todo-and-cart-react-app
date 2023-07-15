@@ -16,8 +16,8 @@ const AppContextProvider = ({ children }) => {
       },
       // shopping cart related data
       cart: {
-        totalItems: 0,
-        items: [],
+        totalProducts: 0,
+        products: [],
       },
     }
   );

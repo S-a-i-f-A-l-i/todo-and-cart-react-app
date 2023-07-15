@@ -8,7 +8,7 @@ const Navbar = () => {
   const {
     appData: {
       todo: { totalTodos, completedTodos },
-      cart: { totalItems },
+      cart: { totalProducts },
     },
   } = useAppContext();
   return (
@@ -34,7 +34,7 @@ const Navbar = () => {
             }
             to="/cart"
           >
-            Cart <sup>{totalItems}</sup>
+            Cart <sup>{totalProducts}</sup>
           </NavLink>
         </li>
         <li className={styles.navbar__items__item}>

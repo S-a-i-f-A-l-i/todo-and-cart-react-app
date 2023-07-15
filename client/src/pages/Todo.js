@@ -6,7 +6,7 @@ const Todo = () => {
   // todos item array destructuring from AppContext
   const {
     appData: {
-      todo: { todos },
+      todo: { completedTodos, totalTodos, todos },
     },
     setAppData,
   } = useAppContext();
@@ -15,7 +15,9 @@ const Todo = () => {
       {/* todo Input */}
       <TodoInput />
       {/* todos list */}
-      {todos &&
+      {todos.length === 0 ? (
+        <h1 style={{ margin: "auto", textAlign: "center" }}>No Todo</h1>
+      ) : (
         todos.map((el, index) => {
           return (
             <TodoItem
@@ -26,7 +28,18 @@ const Todo = () => {
               setAppData={setAppData}
             />
           );
-        })}
+        })
+      )}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          marginTop: "25px",
+        }}
+      >
+        <span>Completed Todos: {completedTodos}</span>
+        <span> Total Todos: {totalTodos}</span>
+      </div>
     </div>
   );
 };
